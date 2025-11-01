@@ -1,0 +1,24 @@
+[project]
+name = "crypto-journal-app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "EngrMikael", email = "prof.engr.tadeomj@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "alembic>=1.17.1",
+    "fastapi>=0.120.3",
+    "psycopg2-binary>=2.9.11",
+    "python-dotenv>=1.2.1",
+    "sqlalchemy>=2.0.44",
+    "uvicorn>=0.38.0",
+]
+
+[project.scripts]
+crypto-journal-app = "crypto_journal_app:main"
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10.0"]
+build-backend = "uv_build"
