@@ -2,11 +2,34 @@
 # this main.py as i learned will be my entire app, 
 # it will handle everything, 
 # for now i will handle my ORM/database
-from fastapi import FastAPI
+# backend/app/main.py
+from fastapi import FastAPI, HTTPException
+from sqlmodel import Session, select
+from contextlib import asynccontextmanager
 
-app = FastAPI()
+from backend.app.core.database import create_db_and_tables, engine, User
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    print("Creating Database Tables...")
+    create_db_and_tables()
+    print("Database tables created!")
+    yield
+    print("Server Shutting down...")
+
+app = FastAPI(lifespan = lifespan)
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    try:
+        with Session(engine) as session:
+            session.exec(select(User)).first()
+        return {"Message: ": "Hello World", "Status: ": "database OK"}
+    except Exception as e:
+        raise HTTPException(status_code = 500, detail = f"Database ERROR: {str(e)}")        
+
+
+
+@app.get("/health")
+async def health():
+    return {"status": "healthy"}
