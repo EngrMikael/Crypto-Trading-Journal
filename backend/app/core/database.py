@@ -1,6 +1,7 @@
 # backend/app/core/database.py
 from sqlmodel import SQLModel, Field, create_engine, Session, select
 from contextlib import contextmanager
+from datetime import date
 import os
 from dotenv import load_dotenv
 
@@ -18,7 +19,6 @@ print(f"DATABASE_URL loaded: {DATABASE_URL}")
 
 engine = create_engine(DATABASE_URL, echo = True)
 
-
 class User(SQLModel, table = True):
     __tablename__ = "users"  # type: ignore
     __table_args__ = {"schema": "auth"}
@@ -26,11 +26,24 @@ class User(SQLModel, table = True):
     email: str = Field(unique = True, index = True)
     hashed_password: str
 
-
+# there is no connection between the User and Journal for now
+class Journal(SQLModel, table = True):
+    __tablename__ = "journal_info" #type: ignore
+    __table_args__ = {"schema": "journal"}
+    id: int | None = Field(default = None, primary_key = True)
+    asset_coin : str
+    value_entered : float
+    value_outcome : float
+    date_open : date
+    date_closed : date | None = None
+    note : str | None = None
+    strategy : str | None = None
+    p_l : bool
+    
 def create_db_and_tables():
     SQLModel.metadata.create_all(engine)
 
 @contextmanager
 def get_session():
-    with Session(engine) as Session:
+    with Session(engine) as session:
         yield session
