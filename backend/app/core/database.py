@@ -20,6 +20,7 @@ print(f"DATABASE_URL loaded: {DATABASE_URL}")
 
 engine = create_engine(DATABASE_URL, echo = True)
 
+# my two schemas
 class User(SQLModel, table = True):
     __tablename__ = "users"  # type: ignore
     __table_args__ = {"schema": "auth"}
@@ -27,7 +28,6 @@ class User(SQLModel, table = True):
     email: str = Field(unique = True, index = True)
     hashed_password: str
 
-# there is no connection between the User and Journal for now
 class Journal(SQLModel, table = True):
     __tablename__ = "journal_info" #type: ignore
     __table_args__ = {"schema": "journal"}
