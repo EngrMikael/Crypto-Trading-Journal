@@ -33,7 +33,7 @@ class Journal(SQLModel, table = True):
     __table_args__ = {"schema": "journal"}
     id: int | None = Field(default = None, primary_key = True)
     # to establish connection/relation i must call on the User Table from auth schema
-    user_id : int = Field(foreign_key = "auth.User.id")
+    user_id : int = Field(foreign_key = "auth.users.id")
     asset_coin : str
     value_entered : float
     value_outcome : float
@@ -41,7 +41,7 @@ class Journal(SQLModel, table = True):
     date_closed : date | None = None
     note : str | None = None
     strategy : str | None = None
-    p_l : bool
+    p_l : bool | None = None
     
 def create_db_and_tables():
     SQLModel.metadata.create_all(engine)

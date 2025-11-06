@@ -8,6 +8,7 @@ from sqlmodel import Session, select
 from contextlib import asynccontextmanager
 
 from backend.app.core.database import create_db_and_tables, engine, User
+from backend.app.api import auth_routes, journal_routes
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -18,6 +19,10 @@ async def lifespan(app: FastAPI):
     print("Server Shutting down...")
 
 app = FastAPI(lifespan = lifespan)
+
+# from api subpackage 
+app.include_router(auth_routes.router, prefix = "/api")
+app.include_router(journal_routes.router, prefix = "/api")
 
 @app.get("/")
 async def root():
