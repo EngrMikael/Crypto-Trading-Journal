@@ -5,6 +5,7 @@ from datetime import date
 import os
 from dotenv import load_dotenv
 
+# BASE_DIR is the root folder, wherein the .env file is located
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 dotenv_path = os.path.join(BASE_DIR, ".env")
 
