@@ -10,10 +10,10 @@ def list_of_trades():
   
       
 @router.post("/register/trade")
-def register_trade(journal_info: CreateTrade, user_id: int):
+def register_trade(journal_info: current_user = Depends(get_current_user)):
     with Session(engine) as session:
         new_trade = Journal(
-            user_id = user_id,
+            user_id = current_user,
             asset_coin = journal_info.asset_coin,
             value_entered = journal_info.value_entered,
             value_outcome = journal_info.value_outcome,
