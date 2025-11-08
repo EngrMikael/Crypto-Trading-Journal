@@ -1,7 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from sqlmodel import Session, select
 from backend.app.core.database import engine, Journal
 from backend.app.model.journal_models import CreateTrade
+from backend.app.core.auth_utils import get_current_user
+
 router = APIRouter()
 
 @router.get("/journal")
@@ -10,7 +12,7 @@ def list_of_trades():
   
       
 @router.post("/register/trade")
-def register_trade(journal_info: current_user = Depends(get_current_user)):
+def register_trade(journal_info: CreateTrade, current_user: int = Depends(get_current_user)):
     with Session(engine) as session:
         new_trade = Journal(
             user_id = current_user,
@@ -20,7 +22,7 @@ def register_trade(journal_info: current_user = Depends(get_current_user)):
             date_open = journal_info.date_open,
             date_closed = journal_info.date_closed,
             note = journal_info.note,
-            strategy = journal_info.strategy,   
+            strategy = journal_info.strategy,
             p_l = journal_info.p_l
         )
         
@@ -28,4 +30,4 @@ def register_trade(journal_info: current_user = Depends(get_current_user)):
         session.commit()
         session.refresh(new_trade)
         
-        return {"message" : "New Trade Created succesfully", "trade id" : new_trade.id}
+        return {"message" : "New Trade Created succesfully", "trade id" : new_trade.id} 
