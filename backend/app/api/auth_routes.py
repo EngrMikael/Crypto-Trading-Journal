@@ -11,6 +11,7 @@ router = APIRouter()
 def list_users():
     return {"message" : "List of users coming soon"}
 
+# this is my register user route
 @router.post("/register")
 def register_user(user : UserCreate):
     with Session(engine) as session:
@@ -33,6 +34,7 @@ def register_user(user : UserCreate):
         
         return {"message" : "User Succesfully Created", "user_id" : new_user.id}
 
+# this is my login route
 @router.post("/login", response_model = Token)
 def login(user: UserLogin):
     with Session(engine) as session:
@@ -41,4 +43,4 @@ def login(user: UserLogin):
             raise HTTPException(status_code = 401, detail = "Invalid Credentials")
         
         token = create_access_token({"sub" : str(db_user.id)})
-        return Token
+        return Token(access_token = token, token_type = "bearer")
