@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Depends
 from sqlmodel import Session, select
-from backend.app.core.database import get_session, Journal
+from backend.app.core.database import get_session, Journal, get_session_dependency
 from backend.app.model.journal_models import CreateTrade
 from backend.app.core.auth_utils import get_current_user
 
 router = APIRouter()
 
 @router.get("/journal")
-def list_of_trades(current_user: int = Depends(get_current_user), session: Session = Depends(get_session)):
+def list_of_trades(current_user: int = Depends(get_current_user), session: Session = Depends(get_session_dependency)):
     trades = session.exec(select(Journal).where(Journal.user_id == current_user)).all()
     return trades
   
@@ -15,7 +15,7 @@ def list_of_trades(current_user: int = Depends(get_current_user), session: Sessi
 def register_trade(
     journal_info: CreateTrade,
     current_user : int = Depends(get_current_user),
-    session: Session = Depends(get_session)
+    session: Session = Depends(get_session_dependency)
     ):
         new_trade = Journal(
             user_id = current_user,
