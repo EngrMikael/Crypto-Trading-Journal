@@ -1,19 +1,22 @@
 from fastapi import APIRouter, Depends
 from sqlmodel import Session, select
-from backend.app.core.database import engine, Journal
+from backend.app.core.database import get_session, Journal
 from backend.app.model.journal_models import CreateTrade
 from backend.app.core.auth_utils import get_current_user
 
 router = APIRouter()
 
 @router.get("/journal")
-def list_of_trades():
-    return {"message" : "List of trades coming soon"}
+def list_of_trades(current_user: int = Depends(get_current_user), session: Session = Depends(get_session)):
+    trades = session.exec(select(Journal).where(Journal.user_id == current_user)).all()
+    return trades
   
-      
 @router.post("/register/trade")
-def register_trade(journal_info: CreateTrade, current_user: int = Depends(get_current_user)):
-    with Session(engine) as session:
+def register_trade(
+    journal_info: CreateTrade,
+    current_user : int = Depends(get_current_user),
+    session: Session = Depends(get_session)
+    ):
         new_trade = Journal(
             user_id = current_user,
             asset_coin = journal_info.asset_coin,
