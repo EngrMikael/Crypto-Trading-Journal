@@ -50,3 +50,8 @@ def create_db_and_tables():
 def get_session():
     with Session(engine) as session:
         yield session
+
+# dependency for FastAPI routes
+def get_session_dependency():
+    with Session(engine) as session:
+        yield session
