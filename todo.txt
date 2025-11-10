@@ -1,3 +1,8 @@
-for 11/9/2025:
+11/9/2025:
     JWT simple non changing auth
-    
+11/10/2025
+    all theese tasks will be moved tom ( no electricity and power today)
+    Fix journal_routes to get the list of trades
+    fix journal_routes to register a new trade
+    create a rough figma design
+11/11/2025
