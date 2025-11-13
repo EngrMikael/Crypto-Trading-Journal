@@ -6,3 +6,7 @@
     fix journal_routes to register a new trade
     create a rough figma design
 11/11/2025
+    fix journal_routes to get the list of trades
+    fix journal_routes to register a new trade
+    create a rough figma design
+
