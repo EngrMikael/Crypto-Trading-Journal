@@ -13,6 +13,7 @@ export default function Register(){
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         if (password !== confirmPassword) {
             alert("Passwords do not match");
             return;
@@ -21,15 +22,22 @@ export default function Register(){
             alert("Please fill all fields");
             return;
         }
+
         try {
             await register(email, password);
             alert("User Registered");
-            navigate("/login")
+            navigate("/login");
         } catch (err) {
-            alert("Register Failed: " + err.response?.data?.detail || err.message)
+            const msg =
+                err.response?.data?.detail ||
+                err.response?.data?.message ||
+                err.message ||
+                "Registration failed";
+
+            alert("Register Failed: " + msg);
         }
-        
     };
+
 
 return (
         <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4">
