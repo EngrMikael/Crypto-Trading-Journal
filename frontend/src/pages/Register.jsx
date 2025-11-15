@@ -27,6 +27,10 @@ export default function Register(){
             await register(email, password);
             alert("User Registered");
             navigate("/login");
+        // "Register Failed: " + err.response?.data?.detail || err.message 
+        // this is the earlier catch, where it neglects err.message, 
+        // since there is a precedence on the part closest to +
+        // therefore, it never run || err.message
         } catch (err) {
             const msg =
                 err.response?.data?.detail ||
