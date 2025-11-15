@@ -16,4 +16,7 @@
             Dashboard (rough)
             Journal (rough)
         create a rough figma design
-
+11/15/2025
+    Create a TradeForm to handle Trade Creation
+11/16/2025
+    Create a Navigation Bar that can be called in any page
