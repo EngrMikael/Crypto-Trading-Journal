@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../api/api";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 export default function Journal() {
   const [trades, setTrades] = useState([]);
@@ -25,6 +26,7 @@ export default function Journal() {
 
   return (
     <div className="p-4">
+      <Navbar/>
       <h1 className="text-xl font-bold mb-4">
         My Trades
         <button
