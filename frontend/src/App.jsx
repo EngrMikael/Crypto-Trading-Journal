@@ -4,6 +4,7 @@ import Journal from "./pages/Journal";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register"
 import RegisterTrade from "./pages/RegisterTrade";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/journal" element={<Journal />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="/register/trade" element={<RegisterTrade />} />
         <Route path="/dashboard" element={<Dashboard />} /> {/* new */}
       </Routes>
