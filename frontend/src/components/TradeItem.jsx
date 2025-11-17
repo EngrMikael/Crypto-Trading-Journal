@@ -1,4 +1,5 @@
-export default function TradeItem({ asset, profit }) {
+export default function TradeItem({ asset, valueEntered, valueOutcome }) {
+  const profit = valueOutcome - valueEntered;
   const isProfit = profit >= 0;
 
   return (

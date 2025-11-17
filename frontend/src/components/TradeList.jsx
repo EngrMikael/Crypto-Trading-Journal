@@ -7,13 +7,14 @@ export default function TradeList({ trades }) {
                     w-[90%] max-w-2xl h-[450px]
                     overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-500">
       
-      {trades.map((t) => (
+      {trades.map((trade) => (
         <TradeItem
-          key={t.id}
-          asset={t.asset_coin}
-          profit={t.value_outcome}
+          key={trade.id}
+          asset={`USDT-${trade.asset_coin}`}
+          valueEntered={trade.value_entered}
+          valueOutcome={trade.value_outcome}
         />
-        ))}
+      ))}
     </div>
-    );
+  );
 }

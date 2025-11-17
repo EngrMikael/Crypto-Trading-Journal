@@ -30,11 +30,9 @@ export default function Journal() {
 
       {/* Top Section with Button */}
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-semibold">My Trades</h1>
-
         <button
           onClick={createTrade}
-          className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 transition"
+          className="mx-auto my-6 px-14 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 transition"
         >
           + New Trade
         </button>
