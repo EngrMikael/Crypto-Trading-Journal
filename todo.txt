@@ -22,3 +22,9 @@
     Create a Navigation Bar that can be called in any page
 11/17/2025
     create a Concept for Settings
+    Rebuild Journal.jsx
+11/18/2025
+    polish the Concept for Settings
+    Rebuild Journal.jsx issues
+    Rebuild Navbar
+    Re-design Dashboard
