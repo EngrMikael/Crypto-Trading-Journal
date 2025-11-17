@@ -35,12 +35,12 @@ This project is part of the **FARPS (Full-stack Application Research and Project
 
 | Component | Status | Progress |
 |------------|---------|-----------|
-| 🧠 Concept & Design | ✅ Completed | ![80%](https://progress-bar.dev/80/) |
-| ⚙️ Backend (FastAPI) | 🏗️ In Progress | ![10%](https://progress-bar.dev/10/) |
-| 🎨 Frontend (React) | 🏗️ In Progress | ![0%](https://progress-bar.dev/0/) |
-| 🗃️ Database (PostgreSQL + SQLAlchemy) | 🏗️ In Progress | ![0%](https://progress-bar.dev/0/) |
-| 🔐 Authentication System | ⏳ Planned | ![0%](https://progress-bar.dev/0/) |
+| 🧠 Concept & Design | ✅ Rough Completed | ![90%](https://progress-bar.dev/90/) |
+| ⚙️ Backend (FastAPI) | ✅ Rough Completed | ![80%](https://progress-bar.dev/80/) |
+| 🎨 Frontend (React) | 🏗️ In Progress | ![30%](https://progress-bar.dev/30/) |
+| 🗃️ Database (PostgreSQL + SQLAlchemy) | ✅ Completed | ![100%](https://progress-bar.dev/100/) |
+| 🔐 Authentication System | ✅ Completed | ![100%](https://progress-bar.dev/100/) |
 | 📊 Analytics Dashboard | ⏳ Planned | ![0%](https://progress-bar.dev/0/) |
-| 🚀 Deployment & Hosting | ⏳ Pending | ![0%](https://progress-bar.dev/0/) |
+| 🚀 Deployment & Hosting | ⏳ Pending | ![0%](https://progress-bar.dev/0/) | 
 
 ---
