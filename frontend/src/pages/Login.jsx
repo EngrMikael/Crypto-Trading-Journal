@@ -65,3 +65,6 @@ export default function Login() {  // ✅ was Register
         </form>
     );
 }
+
+
+// i still need to redesign for a proper glasmorphic design
