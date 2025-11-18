@@ -20,6 +20,6 @@ export default function Dashboard() {
         My Trades
       </button>
     </div>
-
+// create a better dashbord with a glasmorphic design
   );
 }
