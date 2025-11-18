@@ -9,3 +9,8 @@ export default function Settings() {
     </div>
   );
 }
+
+
+
+
+// i still need to redesign for a proper glasmorphic design
