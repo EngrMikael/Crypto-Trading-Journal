@@ -23,7 +23,7 @@
 11/17/2025
     create a Concept for Settings
     Rebuild Journal.jsx
-11/18/2025
+11/18/2025 - 11/21/2025
     polish the Concept for Settings
     Rebuild Journal.jsx issues
     Rebuild Navbar
