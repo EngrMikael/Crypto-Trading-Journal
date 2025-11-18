@@ -74,3 +74,6 @@ export default function Journal() {
     </div>
   );
 }
+
+
+// debug the journal page's header, the navbar is not aligned properly unlike dashboard
