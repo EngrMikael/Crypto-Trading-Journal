@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body, html, #root {
+  background-color: #022437; /* or your app’s background color */
+  color: #fff; /* optional, for text */
+  margin: 0;
+  padding: 0;
+}
