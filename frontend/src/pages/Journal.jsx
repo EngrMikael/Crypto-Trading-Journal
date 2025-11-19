@@ -2,10 +2,19 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/api";
 import Navbar from "../components/Navbar";
+import { useAuth } from "../context/AuthContext";
 
 export default function Journal() {
   const [trades, setTrades] = useState([]);
   const navigate = useNavigate();
+  const { token } = useAuth(); // your auth context
+
+  // Redirect to login if no token
+  useEffect(() => {
+    if (!token) {
+      navigate("/login"); // redirect immediately
+    }
+  }, [token, navigate]);
 
   const createTrade = () => {
     navigate("/register/trade");
@@ -13,16 +22,20 @@ export default function Journal() {
 
   const fetchTrades = async () => {
     try {
-      const res = await api.get("/journal");
+      const res = await api.get("/journal"); // Axios sends token automatically
       setTrades(res.data);
     } catch (err) {
       console.error("Error fetching trades:", err);
+      if (err.response && err.response.status === 401) {
+        navigate("/login"); // redirect if token is invalid/expired
+      }
     }
   };
 
+  // Only fetch trades if token exists
   useEffect(() => {
-    fetchTrades();
-  }, []);
+    if (token) fetchTrades();
+  }, [token]);
 
   return (
     <div className="min-h-screen p-6 bg-[#022437] text-white">
@@ -53,9 +66,7 @@ export default function Journal() {
                     trade.value_outcome >= 0 ? "bg-green-400" : "bg-red-500"
                   }`}
                 />
-                <span className="text-lg font-medium">
-                  {trade.asset_coin}
-                </span>
+                <span className="text-lg font-medium">{trade.asset_coin}</span>
               </div>
 
               {/* Profit/Loss Amount */}
@@ -74,6 +85,3 @@ export default function Journal() {
     </div>
   );
 }
-
-
-// debug the journal page's header, the navbar is not aligned properly unlike dashboard
