@@ -25,6 +25,7 @@
     Rebuild Journal.jsx
 11/18/2025 - 11/21/2025
     polish the Concept for Settings
-    Rebuild Journal.jsx issues
+    Rebuild Journal.jsx issues (done)
     Rebuild Navbar
-    Re-design Dashboard
+    Re-design Dashboard 
+    Fix navigation errors
