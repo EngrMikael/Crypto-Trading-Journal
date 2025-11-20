@@ -44,6 +44,7 @@ export default function Register(){
 
 
 return (
+    <div className="mx-auto max-w-xl aspect-[1/1] bg-[#2e5266]/70 backdrop-blur-xl rouded-3xl p-8 shadow-xl mt-8">
         <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4">
             <h1 className="text-xl font-bold mb-4">Register</h1>
             <input
@@ -51,21 +52,21 @@ return (
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="border p-2 mb-2 w-full"
+                className="border p-2 mb-2 w-full text-black"
             />
             <input
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="border p-2 mb-2 w-full"
+                className="border p-2 mb-2 w-full text-black"
             />
                         <input
                 type="password"
                 placeholder="Re-Enter Password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="border p-2 mb-2 w-full"
+                className="border p-2 mb-2 w-full text-black"
             />
             <button type="submit" className="bg-blue-500 text-white px-4 py-2">
                 Register
@@ -78,6 +79,8 @@ return (
                 Login
             </button>
         </form>
+    </div>
+       
     );
 }
 
