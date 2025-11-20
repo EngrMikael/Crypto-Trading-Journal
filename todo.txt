@@ -27,5 +27,12 @@
     polish the Concept for Settings
     Rebuild Journal.jsx issues (done)
     Rebuild Navbar
-    Re-design Dashboard 
     Fix navigation errors
+    Re-design Dashboard
+        User Profile
+            Picture
+            Username
+        Total Profit
+        Total Loss
+        Total Assets
+        Analytics Chart
