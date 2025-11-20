@@ -28,6 +28,8 @@
     Rebuild Journal.jsx issues (done)
     Rebuild Navbar
     Fix navigation errors
+    Re-design Login (40% complete)
+    Re-design Register (40% complete)
     Re-design Dashboard
         User Profile
             Picture
