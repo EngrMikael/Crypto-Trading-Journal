@@ -31,7 +31,7 @@
     Re-design Login (40% complete)
     Re-design Register (40% complete)
     Re-design Dashboard
-        User Profile
+        User Profile (ongoing)
             Picture
             Username
         Total Profit
