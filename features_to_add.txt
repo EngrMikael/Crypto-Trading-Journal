@@ -1,0 +1,20 @@
+User Profile:
+    Username
+    Display Picture
+    Email
+
+Settings:
+    Choose a color Theme
+
+Dashboard:
+    Total Assets
+    User Profile
+    Analytics (might integrate to machine learning soon)
+
+Journal: 
+    Glassmorphic sliders and cards
+
+Animation:
+    Water Droplets and Jelly like hover
+    Echo/ripple clicks
+    Flow Scroll
