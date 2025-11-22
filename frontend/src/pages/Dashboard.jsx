@@ -59,12 +59,6 @@ export default function Dashboard() {
           Welcome to your dashboard! Here you can manage your trades and track your performance.
         </p>
 
-        {/* User Profile */}
-        <div className="mb-8 p-4 bg-[#7cbcd6]/30 backdrop-blur-xl rounded-2xl shadow-lg w-40 h-60">
-          <h2 className="text-2xl font-semibold mb-2">User Profile</h2>
-          <p>Email: {token && JSON.parse(atob(token.split(".")[1])).sub}</p>
-        </div>
-
         {/* Quick Actions */}
         <div className="flex flex-col sm:flex-row gap-6">
           <button
@@ -80,6 +74,12 @@ export default function Dashboard() {
           >
             Analytics
           </button>
+        </div>
+
+        {/* User Profile */}
+        <div className="mb-8 p-4 my-8 bg-[#7cbcd6]/30 backdrop-blur-xl rounded-2xl shadow-lg w-40 h-60">
+          <h2 className="text-2xl font-semibold mb-2">User Profile</h2>
+          <p>Email: {token && JSON.parse(atob(token.split(".")[1])).sub}</p>
         </div>
 
         {/* Dashboard Stats */}
