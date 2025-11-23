@@ -38,3 +38,4 @@
         Total Loss
         Total Assets
         Analytics Chart
+    Re-design in Figma
