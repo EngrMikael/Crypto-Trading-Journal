@@ -39,4 +39,5 @@
         Total Assets
         Analytics Chart
     Re-design in Figma
-        Redesign the Login (done)
+        Re-design the Login (done)
+        Re-design the Register (done)
