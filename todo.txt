@@ -42,3 +42,4 @@
         Re-design the Login (done)
         Re-design the Register (done)
         Improve NavBar (Slightly Satisfactory, needs more concept)
+        Adding a few Featres in Dashboard
