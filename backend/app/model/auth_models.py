@@ -7,8 +7,9 @@ class UserCreate(SQLModel):
     password : str
     
 class UserRead(SQLModel):
+    # I need to make the UserRead None username otherwise it will raise an error
     id: int
-    username: str
+    username: str | None = None
     email: str
 
 class UserLogin(SQLModel):
