@@ -1,9 +1,9 @@
 from sqlmodel import SQLModel
 
 class UserCreate(SQLModel):
-    # I'm not sure if the username statiate is necessary for user create since it is optional in registering a new user, 
-    # but can be edited once inside the user settings/dashboard
+    # I decided to add a username but make it optional
     email : str
+    username : str | None = None
     password : str
     
 class UserRead(SQLModel):
