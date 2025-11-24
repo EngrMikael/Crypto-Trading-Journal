@@ -22,10 +22,12 @@ engine = create_engine(DATABASE_URL, echo = True)
 
 # my two schemas
 class User(SQLModel, table = True):
+    # I'm adding an option to add a username whene creating a new user, it is optional when creating the account but can be updated in the user settings/dashboard.
     __tablename__ = "users"  # type: ignore
     __table_args__ = {"schema": "auth"}
     id: int | None = Field(default = None, primary_key = True)
     email: str = Field(unique = True, index = True)
+    username: str | None = None
     hashed_password: str
 
 class Journal(SQLModel, table = True):
