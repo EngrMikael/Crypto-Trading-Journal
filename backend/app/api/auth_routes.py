@@ -13,9 +13,7 @@ def list_users():
 
 # this is my register user route
 @router.post("/register")
-# I'm not quite sure if i need to add a condition for username 
-# whether that username is already existing or not, 
-# if it is existing the username will not register (since in the register api for frontend, the user will have an optional input box for username, but can be edited in the user settings/dashboard)
+# I decided to add a username condition to check f it is none then ignore, but if it is filled it should check if there is an existing username already
 def register_user(user : UserCreate):
     with Session(engine) as session:
         # check if email exists
@@ -24,10 +22,17 @@ def register_user(user : UserCreate):
         ).first()
         if existing_user:
             raise HTTPException(status_code = 400, detail = "Email Already exists")
-        
+        if user.username:
+            existing_username = session.exec(
+                select(User).where(User.username == user.username)
+            ).first()
+            
+            if existing_username:
+                raise HTTPException(status_code=400, detail="Username Exists")
         # create a new user with hash password
         new_user = User(
             email = user.email,
+            username = user.username,
             hashed_password = hash_password(user.password)
         )
         
