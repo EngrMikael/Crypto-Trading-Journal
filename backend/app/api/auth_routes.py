@@ -13,6 +13,9 @@ def list_users():
 
 # this is my register user route
 @router.post("/register")
+# I'm not quite sure if i need to add a condition for username 
+# whether that username is already existing or not, 
+# if it is existing the username will not register (since in the register api for frontend, the user will have an optional input box for username, but can be edited in the user settings/dashboard)
 def register_user(user : UserCreate):
     with Session(engine) as session:
         # check if email exists
