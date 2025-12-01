@@ -7,7 +7,10 @@ from backend.app.core.auth_utils import get_current_user
 router = APIRouter()
 
 @router.get("/journal")
-def list_of_trades(current_user: int = Depends(get_current_user), session: Session = Depends(get_session_dependency)):
+def list_of_trades(
+    current_user: int = Depends(get_current_user), 
+    session: Session = Depends(get_session_dependency)
+    ):
     trades = session.exec(select(Journal).where(Journal.user_id == current_user)).all()
     return trades
   
