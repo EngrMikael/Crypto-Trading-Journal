@@ -1,5 +1,5 @@
 # backend/app/core/database.py
-from sqlmodel import SQLModel, Field, create_engine, Session, select
+from sqlmodel import SQLModel, Field, create_engine, Session
 from contextlib import contextmanager
 from datetime import date
 import os
