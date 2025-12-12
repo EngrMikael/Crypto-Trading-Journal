@@ -1,3 +1,5 @@
+// App.jsx
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 
@@ -9,6 +11,11 @@ import Settings from "./pages/Settings";
 import RegisterTrade from "./pages/RegisterTrade";
 import TradeForm from "./components/TradeForm";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import ProfileSettings from "./pages/settings/ProfileSettings";
+import AccountSettings from "./pages/settings/AccountSettings";
+import ThemeSettings from "./pages/settings/ThemeSettings";
+import SecuritySettings from "./pages/settings/SecuritySettings";
+
 
 function App() {
   return (
@@ -43,7 +50,13 @@ function App() {
                 <Settings />
               </ProtectedRoutes>
             }
-          />
+          >
+            <Route index element={<ProfileSettings />} />
+            <Route path="profile" element={<ProfileSettings />} />
+            <Route path="account" element={<AccountSettings />} />
+            <Route path="theme" element={<ThemeSettings />} />
+            <Route path="security" element={<SecuritySettings />} />
+          </Route>
           <Route
             path="/register/trade"
             element={
