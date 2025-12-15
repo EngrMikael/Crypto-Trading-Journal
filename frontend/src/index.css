@@ -8,3 +8,18 @@ body, html, #root {
   margin: 0;
   padding: 0;
 }
+:root {
+  --accent: #22d3ee; /* cyan */
+}
+
+:root[data-accent="emerald"] {
+  --accent: #34d399;
+}
+
+:root[data-accent="violet"] {
+  --accent: #a78bfa;
+}
+
+:root[data-accent="rose"] {
+  --accent: #fb7185;
+}
