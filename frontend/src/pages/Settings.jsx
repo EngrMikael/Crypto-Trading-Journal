@@ -12,12 +12,12 @@ export default function Settings() {
   const { logout } = useAuth();
 
   return (
-    <div className="min-h-screen p-6 bg-gradient-to-b
-                        from-slate-200 to-cyan-200
-                        text-black
-                        dark:from-slate-900 dark:to-cyan-950
-                        dark:text-white
-">
+    <div className="
+      min-h-screen p-6
+      bg-gradient-to-b
+      from-slate-200 to-cyan-200 text-black
+      dark:from-slate-900 dark:to-cyan-950 dark:text-white
+    ">
       <Navbar />
 
       <div className="max-w-6xl mx-auto mt-10 flex gap-6">
