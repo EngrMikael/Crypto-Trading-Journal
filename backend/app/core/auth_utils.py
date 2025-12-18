@@ -5,6 +5,7 @@ from jose import jwt, JWTError
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import os
+from uuid import uuid4
 
 # BASE_DIR is the root folder, wherein the .env file is located
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -23,6 +24,9 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 60
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl = "/api/login")
 
 pwd_context = CryptContext(schemes = ["bcrypt"], deprecated = "auto")
+
+def generate_verification_token() -> str:
+    return str(uuid4())
 
 def hash_password(password: str) -> str:
     return pwd_context.hash(password)
