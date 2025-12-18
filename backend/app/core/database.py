@@ -1,7 +1,7 @@
 # backend/app/core/database.py
 from sqlmodel import SQLModel, Field, create_engine, Session
 from contextlib import contextmanager
-from datetime import date
+from datetime import date, datetime
 import os
 from dotenv import load_dotenv
 
@@ -29,6 +29,10 @@ class User(SQLModel, table = True):
     email: str = Field(unique = True, index = True)
     username: str | None = None
     hashed_password: str
+    
+    is_verified: bool = Field(default=False)
+    verification_token: str | None = None
+    verification_token_expires: datetime | None = None
 
 class Journal(SQLModel, table = True):
     __tablename__ = "journal_info" #type: ignore
