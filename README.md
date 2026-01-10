@@ -44,3 +44,6 @@ This project is part of the **FARPS (Full-stack Application Research and Project
 | 🚀 Deployment & Hosting | ⏳ Pending | ![0%](https://progress-bar.dev/0/) | 
 
 ---
+## 📈 On-Going
+01/01/2025 - Present
+Brainstorming which features to keep, and which to remove.
