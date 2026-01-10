@@ -37,7 +37,7 @@ This project is part of the **FARPS (Full-stack Application Research and Project
 |------------|---------|-----------|
 | 🧠 Concept & Design | ✅ Rough Completed | ![90%](https://progress-bar.dev/90/) |
 | ⚙️ Backend (FastAPI) | ✅ Rough Completed | ![80%](https://progress-bar.dev/80/) |
-| 🎨 Frontend (React) | 🏗️ In Progress | ![30%](https://progress-bar.dev/30/) |
+| 🎨 Frontend (React) | 🏗️ In Progress | ![70%](https://progress-bar.dev/70/) |
 | 🗃️ Database (PostgreSQL + SQLAlchemy) | ✅ Completed | ![100%](https://progress-bar.dev/100/) |
 | 🔐 Authentication System | ✅ Completed | ![100%](https://progress-bar.dev/100/) |
 | 📊 Analytics Dashboard | ⏳ Planned | ![0%](https://progress-bar.dev/0/) |
